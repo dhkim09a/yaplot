@@ -1,5 +1,4 @@
-from yaplot import DataPoints, Figure, LinearPlot
-from yaplot import ScatterPlot
+from yaplot import DataPoints, Figure, ScatterPlot
 
 from .test_base import TestBase
 
