@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+from matplotlib import axes
 from typing import Iterable, List
 
 from .data_points import DataPoints
@@ -12,7 +12,7 @@ class Plot(List[DataPoints]):
     ylim: tuple = None
     legend_loc: str = None
 
-    def _do_draw(self, subplot: plt.subplot):
+    def _do_draw(self, subplot: axes.SubplotBase):
         if self.name:
             subplot.title.set_text(self.name)
         if self.xlabel:
@@ -29,5 +29,5 @@ class Plot(List[DataPoints]):
         if self.legend_loc:
             subplot.legend(loc=self.legend_loc)
 
-    def _draw(self, subplot: plt.subplot):
+    def _draw(self, subplot: axes.SubplotBase):
         raise NotImplementedError

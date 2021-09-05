@@ -1,11 +1,12 @@
+
 from yaplot import DataPoints, Figure, LinearPlot
 from yaplot import ScatterPlot
 
 from .test_base import TestBase
 
-class TestUsages(TestBase):
-    def test_usage1(self):
-        plot = ScatterPlot()
+class TestLinear(TestBase):
+    def test_linear1(self):
+        plot = LinearPlot()
         plot.append(DataPoints([[0, 1], [1, 2], [2, 3]]))
 
         fig = Figure()
@@ -13,8 +14,8 @@ class TestUsages(TestBase):
 
         fig.show(block=False)
 
-    def test_usage2(self):
-        plot = ScatterPlot()
+    def test_linear2(self):
+        plot = LinearPlot()
         plot.append(DataPoints([[0, 1], [1, 2], [2, 3]], name='dp1'))
         plot.append(DataPoints([[0, 2], [1, 3], [2, 4]], name='dp2'))
 
