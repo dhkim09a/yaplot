@@ -1,7 +1,7 @@
 from matplotlib import axes
 import numpy as np
 
-from ..plot import Plot
+from ..core import Plot
 
 class CdfPlot(Plot):
     def __init__(self, *args, **kwargs):

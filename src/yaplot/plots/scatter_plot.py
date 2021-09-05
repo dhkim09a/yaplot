@@ -1,6 +1,6 @@
 from matplotlib import axes
 
-from ..plot import Plot
+from ..core import Plot
 
 class ScatterPlot(Plot):
 

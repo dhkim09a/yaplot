@@ -1,7 +1,6 @@
 from matplotlib import axes
-from matplotlib import pyplot as plt
 
-from ..plot import Plot
+from ..core import Plot
 
 class LinearPlot(Plot):
 
