@@ -1,26 +1,40 @@
 from unittest import TestCase
 
 from yaplot import DataPoints, Figure, LinearPlot
+from yaplot import ScatterPlot
 
 
 class TestUsages(TestCase):
 
     def test_usage1(self):
-        dp = DataPoints([(0, 1), (1, 2)])
+        plot = ScatterPlot()
+        plot.append(DataPoints([[0, 1], [1, 2], [2, 3]], name='dp1'))
+        plot.append(DataPoints([[0, 2], [1, 3], [2, 4]], name='dp2'))
 
-        linearPlot = LinearPlot()
-        linearPlot.append(dp)
+        plot.legend_loc = 'best'
+        plot.xlabel = 'x-axis'
+        plot.ylabel = 'y-axis'
 
         fig = Figure()
-        fig.append(linearPlot)
+        fig.append(plot)
+        fig.append(plot)
 
-        fig.show()
+        fig.show(block=False)
 
-    def test_usage2(self):
-        dp = DataPoints([(0, 1), (1, 2)])
+        fig2 = Figure()
+        fig2.append(plot)
 
-        linearPlot = LinearPlot(dp)
+        fig2.show()
 
-        fig = Figure(linearPlot)
+    # def test_usage2(self):
+    #     dp = DataPoints([[0, 1], [1, 2]])
 
-        fig.show()
+    #     linearPlot = LinearPlot([dp])
+
+    #     fig = Figure([linearPlot])
+
+    #     fig.show()
+
+    # def test_usage3(self):
+    #     dp = DataPoints([[0, 1], [1, 2]])
+    #     print(dp.dimension)
